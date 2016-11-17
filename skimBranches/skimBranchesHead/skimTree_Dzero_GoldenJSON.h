@@ -31,6 +31,7 @@ void SelectRecoBranches(TTree* nt)
 }
 void SelectGenBranches(TTree* nt)
 {
+  nt->SetBranchStatus("GpdgId",0);
 }
 void SelectHiBranches(TTree* nt) 
 {

@@ -1,13 +1,12 @@
 using namespace std;
 #include "uti.h"
 #include "setBranches.h"
-#include "skimTree_TrackerOnly.h"
+#include "skimTree_Cut.h"
 
-int skimTree_TrackerOnly(TString ifname="root://eoscms//eos/cms//store/group/phys_heavyions/wangj/DntupleData/ntD_EvtBase_20160425_HighPtJet80_DfinderData_pp_20160329_dPt0tkPt0p5_D0Dstar/ntuple_69.root",
-                         TString ofname="test.root",
-                         Int_t PD=1,
-                         Bool_t skimbranch=true,
-                         Bool_t skimevents=true)
+int skimTree_Cut(TString ifname="",
+                 TString ofname="",
+                 Int_t PD=1,
+                 Bool_t skimbranch=true)
 {
   cout<<endl;
   cout<<" -- Checking if input and output files are same"<<endl;
@@ -95,18 +94,4 @@ int skimTree_TrackerOnly(TString ifname="root://eoscms//eos/cms//store/group/phy
   outf->Close();
 
   return 1;  
-}
-
-int main(int argc, char *argv[])
-{
-  if(argc==4)
-    {
-      skimTree_TrackerOnly(argv[1], argv[2], atoi(argv[3]));
-      return 1;
-    }
-  else
-    {
-      std::cout<<"Error: invalid parameter number."<<std::endl;
-      return 0;
-    }
 }

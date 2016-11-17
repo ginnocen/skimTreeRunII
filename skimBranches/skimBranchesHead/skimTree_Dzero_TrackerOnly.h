@@ -11,6 +11,8 @@ void SelectGenBranches(TTree* nt)
   nt->SetBranchStatus("GBAncestorpdgId",0);
   nt->SetBranchStatus("GBAncestorpt",0);
   nt->SetBranchStatus("GcollisionId",0);
+
+  nt->SetBranchStatus("GpdgId",0);
 }
 void SelectHiBranches(TTree* nt) 
 {
